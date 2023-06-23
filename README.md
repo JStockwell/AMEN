@@ -55,3 +55,5 @@ To insert a term from the excel sheet it must follow the following format: ```%(
 This workbook must contain in one sheet a table with all the used terms and the different values. The only necessary field is "Email", as it is used to *send* the emails.
 
 Example worksheet:
+| Email | Username | First Name | Last Name | Password |
+| juan.galvan@gmail.com | jgalvan | Juan | Galván | password1234 |
