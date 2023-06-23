@@ -51,7 +51,7 @@ To insert a term from the excel sheet it must follow the following format: ```%(
 - "Password": "password"
 - "Username": "username"
 
-## Excel Workbook
+### Excel Workbook
 This workbook must contain in one sheet a table with all the used terms and the different values. The only necessary field is "Email", as it is used to *send* the emails.
 
 Example worksheet:
