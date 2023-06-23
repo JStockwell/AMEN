@@ -22,12 +22,10 @@ You must also have an instance of Outlook open on your PC, with the email you wi
 
 ## How to use AMEN
 There are two necessary files that are necessary for AMEN: **template.txt and users.xlsx**.
-
 Template.txt is the template Email that will be used. Users.xlsx is the list of users that will be notified.
 
 ### Template.txt
 Template.txt is divided in two sections: subject and body. The first line of the txt file is the subject, the rest is the body.
-
 To insert a term from the excel sheet it must follow the following format: ```%(term_name)s```
 
 Example template:
