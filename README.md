@@ -1,10 +1,10 @@
-# Automated Mass Email Notifications (AMEN) <!-- omit from toc -->
+# really Automated Mass Email Notifications (rAMEN) <!-- omit from toc -->
 
 Automatically sends emails en masse using a plain text template and an excel sheet with the variations.
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [How to use AMEN](#how-to-use-amen)
+- [How to use rAMEN](#how-to-use-ramen)
   - [Template.txt](#templatetxt)
     - [Example template:](#example-template)
     - [List of accepted terms](#list-of-accepted-terms)
@@ -19,8 +19,8 @@ Automatically sends emails en masse using a plain text template and an excel she
 Execute the console command ```pip install -r requirements.txt``` while in the root folder of the project.
 You must also have an instance of Outlook open on your PC, with the email you wish to send the emails from open.
 
-## How to use AMEN
-There are two necessary files that are necessary for AMEN: **template.txt and an excel workbook with the variations**.
+## How to use rAMEN
+There are two necessary files that are necessary for rAMEN: **template.txt and an excel workbook with the variations**.
 Template.txt is the template Email that will be used. Users.xlsx is the list of users that will be notified.
 
 ### Template.txt
