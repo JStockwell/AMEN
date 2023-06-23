@@ -32,13 +32,14 @@ To insert a term from the excel sheet it must follow the following format: ```%(
 
 Example template:
 >Example Email Subject
-Good day %(firstname)s,
->
+><br>
+>Good day %(firstname)s,
+><br><br>
 >Here is your user and password:
->
+><br><br>
 >User: %(userid)s
-Password: %(password)s
->
+>Password: %(password)s
+><br><br>
 >Thank you for your time,
 
 #### List of accepted terms
