@@ -49,11 +49,16 @@ To insert a term from the excel sheet it must follow the following format: ```%(
 - "Last Name": "lastname"
 - "Email": "email"
 - "Password": "password"
-- "User ID": "userid"
+- "Username": "username"
 
 ## Excel Workbook
 This workbook must contain in one sheet a table with all the used terms and the different values. The only necessary field is "Email", as it is used to *send* the emails.
 
 Example worksheet:
-| Email | Username | First Name | Last Name | Password |
-| juan.galvan@gmail.com | jgalvan | Juan | Galván | password1234 |
+
+
+| Email                       | Username | First Name | Last Name | Password     |
+| --------------------------- | -------- | ---------- | --------- | ------------ |
+| juan.galvan@gmail.com       | jgalvan  | Juan       | Galván    | password1234 |
+| alex.paredes@outlook.es     | aparedes | Alex       | Paredes   | password1234 |
+| paolo.sanchez@hotmail.co.uk | psanchez | Paolo      | Sánchez   | password1234 |

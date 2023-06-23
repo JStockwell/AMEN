@@ -67,6 +67,7 @@ def print_email(usr_dict):
     print("Subject: " + subject + "\n\nEmail: " + email + "\n\nCC: " +  cc + "\n\nBody:\n" + body)
 
 workbook_path = input("Enter path to excel file: ")
+
 sheet_name = input("Enter excel sheet name (optional): ")
 mode = input("Enter 1 to send emails, 2 to print emails: ")
 
