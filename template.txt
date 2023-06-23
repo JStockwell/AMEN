@@ -1,0 +1,14 @@
+Usuario y Password SAP - Sistema S4Q – 200
+Buenos días %(firstname)s,
+
+Enviamos tu usuario y contraseña para S4Q – 200:
+
+Usuario: %(userid)s
+Contraseña: %(password)s
+
+Puntos a tener en cuenta: 
+•	Las instrucciones de instalación del SAP GUI y los datos de conexión serán comunicados por la PMO
+•	La primera vez que accedas al sistema se te solicitará que cambies la contraseña 
+•	La contraseña inicial expira en 7 días por lo que se solicita acceder al sistema lo antes posible
+
+Muchas gracias,
