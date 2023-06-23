@@ -2,8 +2,6 @@
 
 Automatically sends emails en masse using a plain text template and an excel sheet with the variations.
 
----
-
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [How to use AMEN](#how-to-use-amen)
