@@ -1,6 +1,7 @@
 # really Automated Mass Email Notifications (rAMEN) <!-- omit from toc -->
 Automatically sends emails en masse using a plain text template and an excel sheet with the variations.
 
+## Table of contents <!-- omit from toc -->
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [How to use rAMEN](#how-to-use-ramen)
