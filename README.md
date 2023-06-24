@@ -10,6 +10,8 @@ Automatically sends emails en masse using a plain text template and an excel she
   - [Excel Workbook](#excel-workbook)
     - [Example worksheet](#example-worksheet)
   - [Executing rAMEN](#executing-ramen)
+  - [Advanced functionalities](#advanced-functionalities)
+    - [Attachments](#attachments)
 
 ## Prerequisites
 - Python 3.11
@@ -55,3 +57,11 @@ The workbook can contain more sheets than the one used by rAMEN and the used she
 
 ### Executing rAMEN
 Run the command ```python .\ramen.py``` in the root folder of the project.
+
+### Advanced functionalities
+
+#### Attachments
+
+When prompted to add attachments, add the path to the files, with no spaces at the beginning and separated by semicolons (;). Example ```C:\Users\USER\Downloads\FILE_TO_SEND_1;C:\Users\USER\Downloads\FILE_TO_SEND_2;C:\Users\USER\Downloads\FILE_TO_SEND_3```.
+
+For different files per email, the excel worksheet must contain the column Attachments, where you introduce the necessary attachments in the same format as before.
