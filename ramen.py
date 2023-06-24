@@ -23,13 +23,13 @@ def read_template(filename):
         template_file_content = template_file.read()
     return template_file_content
 
-def compose_email(i, usr_dict):
+def compose_email(template, i, usr_dict):
     vars = {}
 
     for key in usr_dict.keys():
         vars[key.lower().replace(" ", "_")] = usr_dict[key][i]
 
-    return (read_template(template_path) % vars, usr_dict["Email"][i])
+    return (template % vars, usr_dict["Email"][i])
 
 def send_email(compose_res, attachments, cc):
     email_data = compose_res[0]
@@ -59,48 +59,55 @@ def print_email(compose_res, attachments, cc):
     print("\n-----------------------------------\n")
     print("Subject: " + subject + "\n\nEmail: " + email + "\n\nCC: " +  cc + "\n\nBody:\n" + body + "\n\nAttachments: " + attachments)
 
+# ------------------------------ MAIN FUNCTION ------------------------------ #
+
+def ramen():
+    template_path = input("Enter path to template text file: ")
+    workbook_path = input("Enter path to excel file: ")
+    sheet_name = input("Enter excel sheet name (optional): ")
+
+    if sheet_name == "":
+        sheet = pandas.read_excel(workbook_path)
+
+    else:
+        sheet = pandas.read_excel(workbook_path, sheet_name=sheet_name)
+
+    mode = input("Enter 1 to send emails, 2 to print emails: ")
+
+    if (mode == "1" and input("Are you sure you want to SEND emails? Y or N:").lower() == "y") or mode == "2":
+        usr_dict = sheet.to_dict()
+
+        c_flag = False
+        if not usr_dict.keys().__contains__("CC"):
+            cc = input("Enter CC email addresses separated by semicolons (optional): ")
+
+        else:
+            c_flag = True
+
+        a_flag = False
+        if not usr_dict.keys().__contains__("Attachments"):
+            attachments = input("Enter path to attachments, separated by semicolons (optional): ")
+
+        else:
+            a_flag = True
+
+        template = read_template(template_path)
+
+        for i in range(0, sheet.shape[0]):
+            if a_flag:
+                attachments = usr_dict["Attachments"][i]
+
+            if c_flag:
+                cc = usr_dict["CC"][i]
+            
+            if mode == "1":
+                send_email(compose_email(template, i, usr_dict), attachments, cc)
+            elif mode == "2":
+                print_email(compose_email(template, i, usr_dict), attachments, cc)
+
 # ------------------------------ EXECUTION ------------------------------ #
 
-template_path = input("Enter path to template text file: ")
-workbook_path = input("Enter path to excel file: ")
-sheet_name = input("Enter excel sheet name (optional): ")
-
-if sheet_name == "":
-    sheet = pandas.read_excel(workbook_path)
-
-else:
-    sheet = pandas.read_excel(workbook_path, sheet_name=sheet_name)
-
-mode = input("Enter 1 to send emails, 2 to print emails: ")
-
-if (mode == "1" and input("Are you sure you want to SEND emails? Y or N:").lower() == "y") or mode == "2":
-    usr_dict = sheet.to_dict()
-
-    c_flag = False
-    if not usr_dict.keys().__contains__("CC"):
-        cc = input("Enter CC email addresses separated by semicolons (optional): ")
-
-    else:
-        c_flag = True
-
-    a_flag = False
-    if not usr_dict.keys().__contains__("Attachments"):
-        attachments = input("Enter path to attachments, separated by semicolons (optional): ")
-
-    else:
-        a_flag = True
-
-    for i in range(0, sheet.shape[0]):
-        if a_flag:
-            attachments = usr_dict["Attachments"][i]
-
-        if c_flag:
-            cc = usr_dict["CC"][i]
-        
-        if mode == "1":
-            send_email(compose_email(i, usr_dict), attachments, cc)
-        elif mode == "2":
-            print_email(compose_email(i, usr_dict), attachments, cc)
+ramen()
 
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠋⠉⣿⣤⣤⡾⠏⠛⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
