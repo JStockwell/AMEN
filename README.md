@@ -63,7 +63,7 @@ Run the command ```python .\ramen.py``` in the root folder of the project.
 
 #### CCs
 
-When prompted to add CCs, add the emails, separated by semicolons (;) without any spaces. Example: ```cc_email_1@domain.com;cc_email_2@domain.net```
+When prompted to add CCs, add the emails, separated by semicolons (;) without any spaces. Example: ```cc_email_1@domain.com;cc_email_2@domain.net```.
 
 For different CCs per email, the excel worksheet must contain the column CC (case sensitive), where you introduce the necessary CCs in the same format as before.
 
