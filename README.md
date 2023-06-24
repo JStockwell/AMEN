@@ -1,5 +1,4 @@
 # really Automated Mass Email Notifications (rAMEN) <!-- omit from toc -->
-
 Automatically sends emails en masse using a plain text template and an excel sheet with the variations.
 
 - [Prerequisites](#prerequisites)
@@ -8,6 +7,7 @@ Automatically sends emails en masse using a plain text template and an excel she
   - [Template.txt](#templatetxt)
     - [Example template:](#example-template)
 - [Excel Workbook](#excel-workbook)
+- [Executing rAMEN](#executing-ramen)
 
 ## Prerequisites
 - Python 3.11
@@ -46,9 +46,11 @@ The workbook can contain more sheets than the one used by rAMEN and the used she
 
 Example worksheet:
 
-
 | Email                       | Username | First Name | Last Name | Password     |
 | --------------------------- | -------- | ---------- | --------- | ------------ |
 | juan.galvan@gmail.com       | jgalvan  | Juan       | Galván    | password1234 |
 | alex.paredes@outlook.es     | aparedes | Alex       | Paredes   | password1234 |
 | paolo.sanchez@hotmail.co.uk | psanchez | Paolo      | Sánchez   | password1234 |
+
+### Executing rAMEN
+Run the command ```python .\ramen.py``` in the root folder of the project.
