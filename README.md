@@ -1,3 +1,4 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E7MK94O)
 # really Automated Mass Email Notifications (rAMEN) <!-- omit from toc -->
 Automatically sends emails en masse using a plain text template and an excel sheet with the variations.
 
