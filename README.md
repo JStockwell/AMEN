@@ -5,9 +5,10 @@ Automatically sends emails en masse using a plain text template and an excel she
 - [Installation](#installation)
 - [How to use rAMEN](#how-to-use-ramen)
   - [Template.txt](#templatetxt)
-    - [Example template:](#example-template)
-- [Excel Workbook](#excel-workbook)
-- [Executing rAMEN](#executing-ramen)
+    - [Example template](#example-template)
+  - [Excel Workbook](#excel-workbook)
+    - [Example worksheet](#example-worksheet)
+  - [Executing rAMEN](#executing-ramen)
 
 ## Prerequisites
 - Python 3.11
@@ -27,7 +28,7 @@ Template.txt is divided in two sections: subject and body. The first line of the
 
 To insert a term from the excel sheet it must follow the following format: ```%(term name)s```. The term name is the Excel worksheet's column name in lowercase, with all the spaces replaced by underscores (_). Some examples are: the column First Name would have the term name _first_name_. The column UserID would have the term name _userid_. The column First Name and Surname would have the term name _first_name_and_surname_.
 
-#### Example template:
+#### Example template
 >Example Email Subject
 ><br>
 >Good day %(first_name)s,
@@ -44,8 +45,7 @@ This workbook must contain in one sheet a table with all the used terms and the 
 
 The workbook can contain more sheets than the one used by rAMEN and the used sheet can also have more fields that are not used in rAMEN. The fields do not need to be in a specific order, but there must always be a value for every row for the utilized fields. The sheet must only contain the table of fields.
 
-Example worksheet:
-
+#### Example worksheet
 | Email                       | Username | First Name | Last Name | Password     |
 | --------------------------- | -------- | ---------- | --------- | ------------ |
 | juan.galvan@gmail.com       | jgalvan  | Juan       | Galván    | password1234 |
