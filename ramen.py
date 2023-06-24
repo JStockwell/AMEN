@@ -31,7 +31,7 @@ def compose_email(i, usr_dict):
 
     return (read_template(template_path) % vars, usr_dict["Email"][i])
 
-def send_email(compose_res, attachments):
+def send_email(compose_res, attachments, cc):
     email_data = compose_res[0]
 
     ol = win32com.client.Dispatch("Outlook.Application")
@@ -49,7 +49,7 @@ def send_email(compose_res, attachments):
 
     newmail.Send()
 
-def print_email(compose_res, attachments):
+def print_email(compose_res, attachments, cc):
     email_data = compose_res[0]
 
     subject = email_data.partition('\n')[0]
@@ -77,7 +77,12 @@ if (mode == "1" and input("Are you sure you want to SEND emails? Y or N:").lower
     usr_dict = sheet.to_dict()
 
     #TODO Read cc and attachments from excel sheet as a possibility
-    cc = input("Enter CC email addresses separated by semicolons (optional): ")
+    c_flag = False
+    if not usr_dict.keys().__contains__("CC"):
+        cc = input("Enter CC email addresses separated by semicolons (optional): ")
+
+    else:
+        c_flag = True
 
     a_flag = False
     if not usr_dict.keys().__contains__("Attachments"):
@@ -89,8 +94,11 @@ if (mode == "1" and input("Are you sure you want to SEND emails? Y or N:").lower
     for i in range(0, sheet.shape[0]):
         if a_flag:
             attachments = usr_dict["Attachments"][i]
+
+        if c_flag:
+            cc = usr_dict["CC"][i]
         
         if mode == "1":
-            send_email(compose_email(i, usr_dict), attachments)
+            send_email(compose_email(i, usr_dict), attachments, cc)
         elif mode == "2":
-            print_email(compose_email(i, usr_dict), attachments)
+            print_email(compose_email(i, usr_dict), attachments, cc)

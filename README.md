@@ -12,6 +12,7 @@ Automatically sends emails en masse using a plain text template and an excel she
     - [Example worksheet](#example-worksheet)
   - [Executing rAMEN](#executing-ramen)
   - [Advanced functionalities](#advanced-functionalities)
+    - [CCs](#ccs)
     - [Attachments](#attachments)
 
 ## Prerequisites
@@ -61,8 +62,14 @@ Run the command ```python .\ramen.py``` in the root folder of the project.
 
 ### Advanced functionalities
 
+#### CCs
+
+When prompted to add CCs, add the emails, separated by semicolons (;) without any spaces. Example: ```cc_email_1@domain.com;cc_email_2@domain.net```.
+
+For different CCs per email, the excel worksheet must contain the column CC (case sensitive), where you introduce the necessary CCs in the same format as before.
+
 #### Attachments
 
-When prompted to add attachments, add the path to the files, with no spaces at the beginning and separated by semicolons (;). Example ```C:\Users\USER\Downloads\FILE_TO_SEND_1;C:\Users\USER\Downloads\FILE_TO_SEND_2;C:\Users\USER\Downloads\FILE_TO_SEND_3```.
+When prompted to add attachments, add the path to the files, with no spaces at the beginning and separated by semicolons (;). Example: ```C:\Users\USER\Downloads\FILE_TO_SEND_1;C:\Users\USER\Downloads\FILE_TO_SEND_2```.
 
-For different files per email, the excel worksheet must contain the column Attachments, where you introduce the necessary attachments in the same format as before.
+For different files per email, the excel worksheet must contain the column Attachments (case sensitive), where you introduce the necessary attachments in the same format as before.
