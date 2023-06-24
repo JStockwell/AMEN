@@ -1,9 +1,9 @@
 Example Email Subject
-Good day %(firstname)s,
+Good day %(first_name)s,
 
 Here is your user and password:
 
-User: %(userid)s
+User: %(user_id)s
 Password: %(password)s
 
 Thank you for your time,

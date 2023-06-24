@@ -19,7 +19,6 @@ template_path = input("Enter path to template text file: ")
 workbook_path = input("Enter path to excel file: ")
 sheet_name = input("Enter excel sheet name (optional): ")
 
-
 def read_template(filename):
     with open(filename, 'r', encoding='utf-8') as template_file:
         template_file_content = template_file.read()
